@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<!--[if IE 8]>
+<html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en"> <!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="校园文化礼品">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <title>校园文化礼品</title>
+
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <!-- link to magiczoom.css file -->
+    <link href="magiczoom/magiczoom.css" rel="stylesheet" type="text/css" media="screen" />
+    <!-- link to magiczoom.js file -->
+    <script src="magiczoom/magiczoom.js" type="text/javascript"></script>
+
+
+    <script src="js/modernizr.custom.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="bootstrap/js/html5shiv.js"></script>
+    <script src="bootstrap/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div id="boxedWrapper">
+
+    <header class="main-header clearfix">
+        <div class="container">
+            <h1 class="page-title pull-left">购物车</h1>
+
+            <ol class="breadcrumb pull-right">
+                <% if (!member) { %>
+                <li><a href="/signup">登陆</a></li>
+                <li><a href="/reg">注册</a></li>
+                <% } else { %>
+                <li>欢迎您<%=member.name%><li>
+                <li><a href="/logout">退出</a></li>
+                <% } %>
+            </ol>
+        </div>
+    </header>
+
+    <section class="content-area bg1">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                        <tr>
+                            <td>商品名称</td>
+                            <td>商品购买数量</td>
+                            <td>商品价格</td>
+                            <td>小计</td>
+                            <td>操作</td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>测试商品</td>
+                            <td>2</td>
+                            <td>29</td>
+                            <td>58</td>
+                            <td>
+                                <input type="button" class="btn btn-default" value="删除" />
+                            </td>
+                        </tr>
+                        </tbody>
+                        <tfoot></tfoot>
+                    </table>
+                    <a href="/info" class="btn btn-default">结算</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</div>
+<!-- / boxedWrapper -->
+
+<a href="#" id="toTop"><i class="fa fa-angle-up"></i></a>
+
+
+<script src="js/jquery.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script src="js/detectmobilebrowser.js"></script>
+<script src="js/gmap3.min.js"></script>
+<script src="js/jquery.appear.js"></script>
+<script src="js/jquery.isotope.min.js"></script>
+<script src="js/jquery.ba-bbq.min.js"></script>
+<script src="js/jquery.countTo.js"></script>
+<script src="js/jquery.fitvids.js"></script>
+<script src="js/jquery.flexslider-min.js"></script>
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/jquery.mb.YTPlayer.js"></script>
+<script src="js/jquery.placeholder.min.js"></script>
+<script src="js/retina-1.1.0.min.js"></script>
+<script src="js/timeline/js/storyjs-embed.js"></script>
+<script src="form/js/form.js"></script>
+<script src="twitter/js/jquery.tweet.js"></script>
+
+<script src="js/main.js"></script>
+
+
+
+
+</body>
+</html>

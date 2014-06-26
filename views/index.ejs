@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<!--[if IE 8]>
+<html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en"> <!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="拜爱国际是一家智能家居创新公司,从事前沿智能家居设计。">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <title>拜爱国际创意有限公司</title>
+
+    <link rel="stylesheet" type="text/css" href="/css/animate.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+
+    <script src="/js/modernizr.custom.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/bootstrap/js/html5shiv.js"></script>
+    <script src="/bootstrap/js/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+
+<div id="boxedWrapper">
+
+<header class="main-header clearfix">
+    <div class="container">
+        <h1 class="page-title pull-left">购物车模块</h1>
+        <ol class="breadcrumb pull-right">
+            <% if (!member) { %>
+            <li><a href="/signup">登陆</a></li>
+            <li><a href="/reg">注册</a></li>
+            <% } else { %>
+            <li>欢迎您<%=member.name%><li>
+            <li><a href="/logout">退出</a></li>
+            <% } %>
+        </ol>
+    </div>
+</header>
+
+
+<section class="content-area bg1">
+    <div class="container">
+
+        <ul id="galleryFilters" class="option-set clearfix list-unstyled list-inline">
+            <li><a href="#filter=*" class="btn btn-default btn-primary">全部作品</a></li>
+            <li><a href="#filter=.web" class="btn btn-default">图书音像</a></li>
+            <li><a href="#filter=.identity" class="btn btn-default">日用化妆</a></li>
+            <li><a href="#filter=.print" class="btn btn-default">手机电脑</a></li>
+            <li><a href="#filter=.life" class="btn btn-default">服装首饰</a></li>
+        </ul>
+
+        <div id="galleryContainer" class="clearfix withSpaces col-3">
+            <% if (products) { %>
+            <% for ( var i = 0; i < products.length; i++){ %>
+            <div class="galleryItem identity">
+                <article class="portfolio-item">
+                    <div class="portfolio-thumbnail">
+                        <a href="/detail/<%= products[i]._id %>"><img src="images/content/works-01.jpg" alt=" "></a>
+                        <a href="/detail/<%= products[i]._id %>" class="overlay-img"><span class="overlay-ico"><i class="fa fa-plus"></i></span></a>
+                    </div>
+                    <div class="entry-meta">
+                        <span class="cat-links"><a href="/detail/<%= products[i]._id %>"><%=products[i].name%></a>, <a href="#">智能家居</a></span>
+                    </div>
+                    <h4 class="entry-title"><a href="/detail/<%= products[i]._id %>"><%=products[i].description%></a></h4>
+                </article>
+                <!-- / portfolio-item -->
+            </div>
+            <% }%>
+            <% } %>
+            <% if (products) { %>
+            <% for ( var i = 0; i < products.length; i++){ %>
+            <div class="galleryItem web">
+                <article class="portfolio-item">
+                    <div class="portfolio-thumbnail">
+                        <a href="/detail/<%= products[i]._id %>"><img src="images/content/works-01.jpg" alt=" "></a>
+                        <a href="/detail/<%= products[i]._id %>" class="overlay-img"><span class="overlay-ico"><i class="fa fa-plus"></i></span></a>
+                    </div>
+                    <div class="entry-meta">
+                        <span class="cat-links"><a href="/detail/<%= products[i]._id %>"><%=products[i].name%></a>, <a href="#">智能家居</a></span>
+                    </div>
+                    <h4 class="entry-title"><a href="/detail"><%=products[i].description%></a></h4>
+                </article>
+                <!-- / portfolio-item -->
+            </div>
+            <% }%>
+            <% } %>
+            <% if (products) { %>
+            <% for ( var i = 0; i < products.length; i++){ %>
+            <div class="galleryItem print">
+                <article class="portfolio-item">
+                    <div class="portfolio-thumbnail">
+                        <a href="/detail/<%= products[i]._id %>"><img src="images/content/works-01.jpg" alt=" "></a>
+                        <a href="/detail/<%= products[i]._id %>" class="overlay-img"><span class="overlay-ico"><i class="fa fa-plus"></i></span></a>
+                    </div>
+                    <div class="entry-meta">
+                        <span class="cat-links"><a href="/detail/<%= products[i]._id %>"><%=products[i].name%></a>, <a href="#">智能家居</a></span>
+                    </div>
+                    <h4 class="entry-title"><a href="/detail/<%= products[i]._id %>"><%=products[i].description%></a></h4>
+                </article>
+                <!-- / portfolio-item -->
+            </div>
+            <% }%>
+            <% } %>
+            <% if (products) { %>
+            <% for ( var i = 0; i < products.length; i++){ %>
+            <div class="galleryItem life">
+                <article class="portfolio-item">
+                    <div class="portfolio-thumbnail">
+                        <a href="/detail/<%= products[i]._id %>"><img src="images/content/works-01.jpg" alt=" "></a>
+                        <a href="/detail/<%= products[i]._id %>" class="overlay-img"><span class="overlay-ico"><i class="fa fa-plus"></i></span></a>
+                    </div>
+                    <div class="entry-meta">
+                        <span class="cat-links"><a href="/detail/<%= products[i]._id %>"><%=products[i].name%></a>, <a href="#">智能家居</a></span>
+                    </div>
+                    <h4 class="entry-title"><a href="/detail/<%= products[i]._id %>"><%=products[i].description%></a></h4>
+                </article>
+                <!-- / portfolio-item -->
+            </div>
+            <% }%>
+            <% } %>
+        </div>
+        <!-- / galleryContainer -->
+
+
+    </div>
+</section>
+<!-- / section -->
+
+<!-- / section -->
+
+<footer>
+    <div class="container mainfooter">
+        <div class="row">
+            <aside class="col-md-3 widget">
+                <img src="/images/content/logo-footer.png" alt=" ">
+                <br><br>
+
+                <p class="darker">©2013-2014 拜爱国际</p>
+
+                <p class="darker">京备案20140219</p>
+
+                <p class="darker">设计: <a href="#">wanghuan</a></p>
+            </aside>
+
+            <aside class="col-md-3 widget">
+                <h1 class="widget-title">联系我们</h1>
+
+                <a href="mailto:hello@example.com" class="larger">hello@byids.com</a>
+
+                <p>
+                    北京市 朝阳区 百子湾 苹果园
+                </p>
+
+                <p>
+                    电话：400-800-868
+                </p>
+                <p>
+                    邮箱：hello@byids.com
+                </p>
+
+            </aside>
+
+            <aside class="col-md-3 widget">
+                <h1 class="widget-title">品牌故事</h1>
+
+                <p>
+                    企业之间的设计理念
+                </p>
+
+                <p>
+                    创造价值的企业品牌
+                </p>
+                <p>
+                    品牌大事件－拥有最前沿的技术
+                </p>
+                <p>
+                    最酷范儿的设计团队
+                </p>
+            </aside>
+
+            <aside class="col-md-3 widget">
+                <h1 class="widget-title">友情链接</h1>
+
+                <p>
+                    Hiiishare前沿设计－第一设计网
+                </p>
+
+                <p>
+                    家居设计－最时尚的室内环境生活
+                </p>
+                <p>
+                    前沿设计－不求最好只求舒适
+                </p>
+                <p>Houzz智能家居－全球顶级私人定制
+                </p>
+
+            </aside>
+        </div>
+    </div>
+</footer>
+
+
+</div>
+<!-- / boxedWrapper -->
+
+<a href="#" id="toTop"><i class="fa fa-angle-up"></i></a>
+
+
+<script src="/js/jquery.min.js"></script>
+<script src="/bootstrap/js/bootstrap.min.js"></script>
+
+<script src="/js/detectmobilebrowser.js"></script>
+<script src="/js/gmap3.min.js"></script>
+<script src="/js/jquery.appear.js"></script>
+<script src="/js/jquery.isotope.min.js"></script>
+<script src="/js/jquery.ba-bbq.min.js"></script>
+<script src="/js/jquery.countTo.js"></script>
+<script src="/js/jquery.fitvids.js"></script>
+<script src="/js/jquery.flexslider-min.js"></script>
+<script src="/js/jquery.magnific-popup.min.js"></script>
+<script src="/js/jquery.mb.YTPlayer.js"></script>
+<script src="/js/jquery.placeholder.min.js"></script>
+<script src="/js/retina-1.1.0.min.js"></script>
+<script src="/js/timeline/js/storyjs-embed.js"></script>
+<script src="/form/js/form.js"></script>
+<script src="/twitter/js/jquery.tweet.js"></script>
+
+<script src="/js/main.js"></script>
+
+
+
+</body>
+</html>
