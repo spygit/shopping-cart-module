@@ -90,6 +90,18 @@ module.exports = function(app) {
         });
     });
 
+    app.get('/system/member_remove/:_id',checkAdminLogin)
+    app.get('/system/member_remove/:_id',function(req,res){
+        Member.remove(req.params._id,function(err){
+            if (err) {
+                req.flash('error', err);
+                return res.redirect('back');
+            }
+            req.flash('success', '删除成功!');
+            res.redirect('/system/member');
+        });
+    })
+
     app.get('/system/product_index',checkAdminLogin);
     app.get('/system/product_index', function (req, res) {
         Product.getList(null, function (err, products) {
@@ -141,6 +153,18 @@ module.exports = function(app) {
         });
     });
 
+    app.get('/system/product_remove/:_id',checkAdminLogin);
+    app.get('/system/product_remove/:_id',function(req, res){
+        Product.remove(req.params._id,function(err){
+            if (err) {
+                req.flash('error', err);
+                return res.redirect('back');
+            }
+            req.flash('success', '删除成功!');
+            res.redirect('/system/product_index');
+        });
+    });
+
     app.get('/system/category_index',checkAdminLogin);
     app.get('/system/category_index', function (req, res) {
         Category.getList(null, function (err, categorys) {
@@ -187,6 +211,17 @@ module.exports = function(app) {
             });
         });
     });
+
+    app.get('/system/category_remove/:_id',function(req, res) {
+        Category.remove(req.params._id,function(err){
+            if(err){
+                req.flash('error', err);
+                return res.redirect('back');
+            }
+            req.flash('success','商品类别删除成功！');
+            res.redirect('/system/category_index');
+        })
+    })
 
 
     //前台界面路由

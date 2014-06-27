@@ -55,13 +55,8 @@
                     <p class="img_large"><a href="/images/content/project.jpg" class="MagicZoom" id="Zoomer3" rel="selectors-change: mouseover; selectors-effect: fade" title=""><img src="/images/content/project.jpg"/></a></p>
                 </div>
                 <div class="col-md-5">
-                    <form method="post" action="/addToCart">
                     <dl>
-                        <% if (member) { %>
-                        <input type="hidden" name="uid" value="<%=member._id%>" />
-                        <% } else { %>
-                        <% } %>
-                        <input type="hidden" name="pid" value="<%=product._id%>" />
+                        <input type="hidden" id="pid" value="<%=product._id%>"/>
                         <dt>商品名称</dt>
                         <dd><%=product.name%></dd>
 
@@ -73,7 +68,7 @@
 
                         <dt>商品数量</dt>
                         <dd>
-                            <div class="col-md-1" id="more">+</div><input type="text" value="1" id="num" name="count" class="col-md-2"/><div class="col-md-1" id="less">-</div>
+                            <div class="col-md-1" id="more">+</div><input type="text" value="1" id="num" class="col-md-2"/><div class="col-md-1" id="less">-</div>
                         </dd>
 
                     </dl>
@@ -83,8 +78,7 @@
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%=product.description%>
                     </dd>
                     <br>
-                    <input type="submit" value="加入购物车" class="btn btn-default" /><a class="btn btn-default col-md-offset-2" href="/cart">去购物车结算</a>
-                    </form>
+                    <a id="add_to_cart" class="btn btn-default" />加入购物车</a><a class="btn btn-default col-md-offset-2" href="/cart">去购物车结算</a>
                 </div>
             </div>
 
@@ -259,11 +253,6 @@
 
 <script src="/js/main.js"></script>
 <script type="text/javascript">
-    $(function(){
-        $("#info_ul p").click(function(){
-            $(this).css({"border":"2px solid #85a4be",}).parent().siblings().children().css({"border":"1px solid #d8d8d8"});
-        })
-    })
     //鏁伴噺澧炲姞鎸夐挳
     $(function () {
         //商品购买数量的修改
@@ -274,14 +263,20 @@
             if (n < 1)
             { n=1}
             $("#num").val(n);
-        })
+        });
         $("#more").click(function () {
             n=$("#num").val();
             n++;
             if (n < 1)
             { n = 1 }
             $("#num").val(n);
-        })
+        });
+
+        var count = $("#num").val();
+        $("#add_to_cart").click(function(){
+            var pid = $("#pid").vai();
+            var count = $("#num").val();
+        });
     })
 </script>
 

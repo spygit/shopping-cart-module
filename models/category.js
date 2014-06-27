@@ -2,6 +2,7 @@
  * Created by eliufch on 6/22/2014.
  */
 var mongodb = require('./db');
+var ObjectID = require('mongodb').ObjectID;
 
 function Category(category) {
     this.name = category.name;
@@ -70,6 +71,7 @@ Category.getList = function(name, callback) {
     //打开数据库
     mongodb.open(function (err, db) {
         if (err) {
+            mongodb.close();
             return callback(err);//错误，返回 err 信息
         }
         //读取 users 集合
@@ -93,3 +95,27 @@ Category.getList = function(name, callback) {
         });
     });
 };
+
+Category.remove = function(_id, callback) {
+    mongodb.open(function(err, db) {
+        if(err) {
+            mongodb.close();
+            return callback(err);
+        }
+        db.collection('categorys', function(err,collection){
+            if(err){
+                mongodb.close();
+                return callback(err);
+            }
+            collection.remove({
+                _id: new ObjectID(_id)
+            },function(err){
+                mongodb.close();
+                if(err){
+                    return callback(err);
+                }
+                callback(null);
+            })
+        });
+    })
+}

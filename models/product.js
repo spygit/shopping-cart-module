@@ -124,3 +124,29 @@ Product.getList = function(name, callback) {
         });
     });
 };
+
+//读取多个数据,根据多个条件
+Product.remove = function(_id, callback) {
+    //打开数据库
+    mongodb.open(function (err, db) {
+        if (err) {
+            return callback(err);//错误，返回 err 信息
+        }
+        //读取 users 集合
+        db.collection('products', function (err, collection) {
+            if (err) {
+                mongodb.close();
+                return callback(err);//错误，返回 err 信息
+            }
+            collection.remove({
+                _id: new ObjectID(_id)
+            },function (err) {
+                mongodb.close();
+                if (err) {
+                    return callback(err);//失败！返回 err 信息
+                }
+                callback(null);//成功！返回查询的用户信息
+            });
+        });
+    });
+};
